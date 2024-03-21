@@ -7,7 +7,11 @@ const Edit = (props) => {
           <p>email={props.email}</p>
           <p>password={props.password}</p>
         </div>
-        <button onSubmit={props.setSwitcher(true)}>
+        <button
+          onClick={() => {
+            props.setSwitcher(false);
+          }}
+        >
           Edit your informations
         </button>
       </div>
@@ -16,3 +20,4 @@ const Edit = (props) => {
 };
 
 export default Edit;
+
