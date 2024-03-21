@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Header = () => {
   return (
     <header>
-      <h1>Miaou</h1>
+      <h1>Create Account</h1>
     </header>
   );
 };

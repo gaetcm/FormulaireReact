@@ -11,6 +11,7 @@ import Footer from "./assets/components/Footer";
 import Header from "./assets/components/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Edit from "./assets/components/Edit";
+import Form from "./assets/components/Form";
 
 function App() {
   const [name, setName] = useState("");
@@ -44,6 +45,7 @@ function App() {
           //
           //
           <Form
+            handleSubmit={handleSubmit}
             name={name}
             setName={setName}
             email={email}
@@ -56,11 +58,16 @@ function App() {
             setSwitcher={setSwitcher}
             showBorder={showBorder}
             setshowBorder={setShowBorder}
-            showError={ShowError}
+            showError={showError}
             setShowError={setShowError}
           />
         ) : (
-          <Edit name={name} email={email} password={password} />
+          <Edit
+            name={name}
+            email={email}
+            password={password}
+            setSwitcher={setSwitcher}
+          />
         )}
       </div>
 

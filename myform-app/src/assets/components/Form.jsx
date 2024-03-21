@@ -1,7 +1,7 @@
 const Form = (props) => {
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={props.handleSubmit}>
         <h2>Create account</h2>
 
         <input
@@ -10,8 +10,8 @@ const Form = (props) => {
           name="name"
           placeholder="Nom"
           onChange={(event) => {
-            console.log(event.target.value);
-            setName(event.target.value);
+            //console.log(event.target.value);
+            props.setName(event.target.value);
           }}
         />
 
@@ -21,34 +21,34 @@ const Form = (props) => {
           name="email"
           placeholder="Michel@sardou.fr"
           onChange={(event) => {
-            setEmail(event.target.value);
+            props.setEmail(event.target.value);
           }}
         />
 
         <input
-          className={showBorder}
+          className={props.showBorder}
           value={props.password}
           type="password"
           name="password"
           placeholder="Password"
           onChange={(event) => {
-            setPassword(event.target.value);
+            props.setPassword(event.target.value);
           }}
         />
 
         <input
-          className={showBorder}
+          className={props.showBorder}
           value={props.confirmpassword}
           type="password"
           name="confirmpassword"
           placeholder="Confirm your password"
           onChange={(event) => {
-            setConfirmpassword(event.target.value);
+            props.setConfirmpassword(event.target.value);
           }}
         />
         <button className="buttonform">Envoyer</button>
-        {showError === true && (
-          <p style={{ color: "red" }}>Nul tu es NUL !!!</p>
+        {props.showError === true && (
+          <p style={{ color: "red" }}>Your passwords dont match</p>
         )}
       </form>
     </>

@@ -7,7 +7,9 @@ const Edit = (props) => {
           <p>email={props.email}</p>
           <p>password={props.password}</p>
         </div>
-        <button>Edit your informations</button>
+        <button onSubmit={props.setSwitcher(true)}>
+          Edit your informations
+        </button>
       </div>
     </>
   );
