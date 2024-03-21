@@ -41,56 +41,24 @@ function App() {
 
       <div className="mainform">
         {switcher === false ? (
-          <form onSubmit={handleSubmit}>
-            <h2>Create account</h2>
-
-            <input
-              value={name}
-              type="text"
-              name="name"
-              placeholder="Nom"
-              onChange={(event) => {
-                console.log(event.target.value);
-                setName(event.target.value);
-              }}
-            />
-
-            <input
-              value={email}
-              type="email"
-              name="email"
-              placeholder="Michel@sardou.fr"
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-            />
-
-            <input
-              className={showBorder}
-              value={password}
-              type="password"
-              name="password"
-              placeholder="Password"
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-            />
-
-            <input
-              className={showBorder}
-              value={confirmpassword}
-              type="password"
-              name="confirmpassword"
-              placeholder="Confirm your password"
-              onChange={(event) => {
-                setConfirmpassword(event.target.value);
-              }}
-            />
-            <button className="buttonform">Envoyer</button>
-            {showError === true && (
-              <p style={{ color: "red" }}>Nul tu es NUL !!!</p>
-            )}
-          </form>
+          //
+          //
+          <Form
+            name={name}
+            setName={setName}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            confirmpassword={confirmpassword}
+            setConfirmpassword={setConfirmpassword}
+            switcher={switcher}
+            setSwitcher={setSwitcher}
+            showBorder={showBorder}
+            setshowBorder={setShowBorder}
+            showError={ShowError}
+            setShowError={setShowError}
+          />
         ) : (
           <Edit name={name} email={email} password={password} />
         )}
